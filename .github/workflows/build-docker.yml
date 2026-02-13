@@ -84,6 +84,7 @@ jobs:
           platforms: ${{ matrix.platform }}
           push: true
           tags: ${{ needs.prepare.outputs.image }}:${{ needs.prepare.outputs.version }}-${{ matrix.suffix }}
+          provenance: false
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
