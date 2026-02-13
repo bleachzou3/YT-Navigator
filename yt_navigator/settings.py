@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -213,3 +213,7 @@ POWERFUL_LLM = os.getenv("POWERFUL_LLM", "qwen-qwq-32b")
 CHECKPOINT_TABLES = ["checkpoint_blobs", "checkpoint_writes", "checkpoints"]
 
 SCRAPER_WORKERS_NUM = os.getenv("SCRAPER_WORKERS_NUM", os.cpu_count())
+
+CSRF_TRUSTED_ORIGINS = os.getenv(
+    "CSRF_TRUSTED_ORIGINS", "http://localhost,https://*.olares.cn,https://*.olares.com"
+).split(",")
