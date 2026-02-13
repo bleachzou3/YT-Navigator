@@ -31,7 +31,7 @@ services:
           devices:
             - driver: nvidia
               count: 1
-              capabilities: [gpu]
+              capabilities: [ gpu ]
   db:
     container_name: ytnavigator-db
     image: pgvector/pgvector:pg16
@@ -44,7 +44,7 @@ services:
     ports:
       - "15432:5432"
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "postgres"]
+      test: [ "CMD", "pg_isready", "-U", "postgres", "-d", "postgres" ]
       interval: 10s
       timeout: 5s
       retries: 5
